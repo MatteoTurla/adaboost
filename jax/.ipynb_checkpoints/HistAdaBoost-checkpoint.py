@@ -6,7 +6,7 @@ def discretize(x):
     discretize input data into bins
     """
     min_ = x.min()
-    max_ = x.max() + 0.05
+    max_ = x.max() + 0.050
     bins = jnp.linspace(min_, max_, 256)
     x_binned = jnp.digitize(x, bins, right=False)
     return x_binned, bins
