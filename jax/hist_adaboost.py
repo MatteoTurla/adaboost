@@ -44,7 +44,7 @@ class HistDecisionStump:
 
         F = d[y==1].sum()
 
-        objs, bin_indices = jit_batched_split_bincount(x_binned, y, d, F)
+        objs, bin_indices = jit_batched_split_bincount(x, y, d, F)
         j = objs.argmax()
         bin_index = bin_indices[j]
         theta = bins[j, bin_index+1]
