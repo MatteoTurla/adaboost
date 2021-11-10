@@ -1,6 +1,9 @@
 import numpy as np
 
 class DecisionStump:
+    """
+    slow version of decision stump based on iteration.
+    """
     def __init__(self):
         self.j = None
         self.theta = None
@@ -13,8 +16,6 @@ class DecisionStump:
         F_star = 1
         
         for col in range(ncol):
-            # Returns the sorted unique elements of an array
-            # unique_dict = {col: np.unique(X[:,col])[0]}
             
             sorted_index = np.argsort(X[:, col])
             sorted_val = X[sorted_index, col]     

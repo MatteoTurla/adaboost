@@ -32,7 +32,7 @@ def nestedCV(classifier, params, X, y, n_external_fold, n_internal_fold, verbose
     test_score = 0
     
     for fold_number, (train_index, test_index) in enumerate(skf.split(X, y)):
-        best_param, internal_score = CV(classifier, params, X[train_index,:], y[train_index], n_internal_fold, verbose=verbose)
+        best_param, internal_score = GridSearchCV(classifier, params, X[train_index,:], y[train_index], n_internal_fold, verbose=verbose)
         
         classifier = classifier.clone()
         classifier.set_params(**best_param)
@@ -46,7 +46,8 @@ def nestedCV(classifier, params, X, y, n_external_fold, n_internal_fold, verbose
         test_score += tts
         
         if verbose:
-            print(f"Fold number: {fold_number}, score: {tts}, best params: {best_param}")
+            print(f"\nComputing score on external folder number: {fold_number}, score: {tts}, best params: {best_param}")
+            print()
     
     train_score /= n_external_fold
     test_score /= n_external_fold

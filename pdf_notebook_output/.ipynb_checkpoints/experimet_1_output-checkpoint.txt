@@ -1,0 +1,300 @@
+(ml) matteoturla@MacBook-Pro-di-Matteo adaboost % python experiment_1.py
+Label 0 has 0.3646% (3646) examples
+Label 1 has 0.4876% (4876) examples
+Label 2 has 0.0615% (615) examples
+Label 3 has 0.0047% (47) examples
+Label 4 has 0.0164% (164) examples
+Label 5 has 0.0299% (299) examples
+Label 6 has 0.0353% (353) examples
+
+Majority label classifier zero-one loss: 0.5124
+
+Nested CV - One Vs All AdaBoost decision stump
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6728172817281729
+validation score 0.6659165916591658
+----------
+T  :  101
+train score: 0.7484998499849985
+validation score 0.7131713171317132
+----------
+T  :  301
+train score: 0.7718271827182718
+validation score 0.7104710471047104
+Grid Search CV -> best validation score: 0.7131713171317132 with parameters {'T': 101}
+
+Computing score on external folder number: 0, score: 0.7210557888422315, best params: {'T': 101}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6689665366986642
+validation score 0.663416071701637
+----------
+T  :  101
+train score: 0.7498118822005936
+validation score 0.7181630443746129
+----------
+T  :  301
+train score: 0.7689360443355922
+validation score 0.7163625269409533
+Grid Search CV -> best validation score: 0.7181630443746129 with parameters {'T': 101}
+
+Computing score on external folder number: 1, score: 0.7248724872487249, best params: {'T': 101}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6755661674153917
+validation score 0.6688180963845373
+----------
+T  :  101
+train score: 0.7549872985048788
+validation score 0.7199641691564569
+----------
+T  :  301
+train score: 0.7779359825746354
+validation score 0.7222146641114854
+Grid Search CV -> best validation score: 0.7222146641114854 with parameters {'T': 301}
+
+Computing score on external folder number: 2, score: 0.7146714671467147, best params: {'T': 301}
+
+train loss 0.25125048128031635 | test loss 0.27980008558744307
+
+Nested CV - MH.AdaBoost decision stump
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6382388238823883
+validation score 0.635013501350135
+----------
+T  :  101
+train score: 0.5834833483348335
+validation score 0.5589558955895589
+----------
+T  :  301
+train score: 0.527902790279028
+validation score 0.5037503750375038
+Grid Search CV -> best validation score: 0.635013501350135 with parameters {'T': 1}
+
+Computing score on external folder number: 0, score: 0.6349730053989202, best params: {'T': 1}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6322183118199334
+validation score 0.6295182149793926
+----------
+T  :  101
+train score: 0.5563210820519623
+validation score 0.5114769911539062
+----------
+T  :  301
+train score: 0.5682459247049564
+validation score 0.5308244724607413
+Grid Search CV -> best validation score: 0.6295182149793926 with parameters {'T': 1}
+
+Computing score on external folder number: 1, score: 0.6474647464746475, best params: {'T': 1}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6427181469553029
+validation score 0.6395690851136395
+----------
+T  :  101
+train score: 0.548073176271508
+validation score 0.5182211878407813
+----------
+T  :  301
+train score: 0.4405351333783547
+validation score 0.41231545556714916
+Grid Search CV -> best validation score: 0.6395690851136395 with parameters {'T': 1}
+
+Computing score on external folder number: 2, score: 0.6228622862286228, best params: {'T': 1}
+
+train loss 0.3627999593119654 | test loss 0.36489998729926987
+
+Nested CV - SKLEARN One Vs All AdaBoost decision stump 
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:  2.4min finished
+train loss 0.239050176204061 | test loss 0.27880010556544554
+
+Nested CV - SKLEARN Multiclass AdaBoost decision stump 
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   22.8s finished
+train loss 0.36354992181384027 | test loss 0.3657000073132688
+(ml) matteoturla@MacBook-Pro-di-Matteo adaboost % python experiment_1.py
+Label 0 has 0.3646% (3646) examples
+Label 1 has 0.4876% (4876) examples
+Label 2 has 0.0615% (615) examples
+Label 3 has 0.0047% (47) examples
+Label 4 has 0.0164% (164) examples
+Label 5 has 0.0299% (299) examples
+Label 6 has 0.0353% (353) examples
+
+Majority label classifier zero-one loss: 0.5124
+
+Nested CV - One Vs All AdaBoost decision stump
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6728172817281729
+validation score 0.6659165916591658
+^[[15~----------
+T  :  101
+train score: 0.7484998499849985
+validation score 0.7131713171317132
+----------
+T  :  301
+train score: 0.7718271827182718
+validation score 0.7104710471047104
+Grid Search CV -> best validation score: 0.7131713171317132 with parameters {'T': 101}
+
+Computing score on external folder number: 0, score: 0.7210557888422315, best params: {'T': 101}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6689665366986642
+validation score 0.663416071701637
+----------
+T  :  101
+train score: 0.7498118822005936
+validation score 0.7181630443746129
+----------
+T  :  301
+train score: 0.7689360443355922
+validation score 0.7163625269409533
+Grid Search CV -> best validation score: 0.7181630443746129 with parameters {'T': 101}
+
+Computing score on external folder number: 1, score: 0.7248724872487249, best params: {'T': 101}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6755661674153917
+validation score 0.6688180963845373
+----------
+T  :  101
+train score: 0.7549872985048788
+validation score 0.7199641691564569
+----------
+T  :  301
+train score: 0.7779359825746354
+validation score 0.7222146641114854
+Grid Search CV -> best validation score: 0.7222146641114854 with parameters {'T': 301}
+
+Computing score on external folder number: 2, score: 0.7146714671467147, best params: {'T': 301}
+
+train loss 0.25125048128031635 | test loss 0.27980008558744307
+
+Nested CV - MH.AdaBoost decision stump
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6382388238823883
+validation score 0.635013501350135
+----------
+T  :  101
+train score: 0.6794179417941795
+validation score 0.6686168616861686
+----------
+T  :  301
+train score: 0.692019201920192
+validation score 0.6755175517551755
+Grid Search CV -> best validation score: 0.6755175517551755 with parameters {'T': 301}
+
+Computing score on external folder number: 0, score: 0.6787642471505699, best params: {'T': 301}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6322183118199334
+validation score 0.6295182149793926
+----------
+T  :  101
+train score: 0.6767659161866693
+validation score 0.6671659743572199
+----------
+T  :  301
+train score: 0.6874902000886252
+validation score 0.6730157496181466
+Grid Search CV -> best validation score: 0.6730157496181466 with parameters {'T': 301}
+
+Computing score on external folder number: 1, score: 0.6906690669066907, best params: {'T': 301}
+
+
+Grid Search CV with 3 folds
+Grid: [{'T': 1}, {'T': 101}, {'T': 301}]
+----------
+T  :  1
+train score: 0.6427181469553029
+validation score 0.6395690851136395
+----------
+T  :  101
+train score: 0.6846407419144613
+validation score 0.6778167695312041
+----------
+T  :  301
+train score: 0.6997150727446199
+validation score 0.6815657949060764
+Grid Search CV -> best validation score: 0.6815657949060764 with parameters {'T': 301}
+
+Computing score on external folder number: 2, score: 0.6666666666666666, best params: {'T': 301}
+
+train loss 0.3130001765738295 | test loss 0.3213000064253576
+
+Nested CV - SKLEARN One Vs All AdaBoost decision stump 
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:  2.5min finished
+train loss 0.239050176204061 | test loss 0.27880010556544554
+
+Nested CV - SKLEARN Multiclass AdaBoost decision stump 
+hyper-parameters: [{'T': 1}, {'T': 101}, {'T': 301}]
+[Parallel(n_jobs=1)]: Using backend SequentialBackend with 1 concurrent workers.
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   23.6s finished
+train loss 0.36354992181384027 | test loss 0.3657000073132688

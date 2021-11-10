@@ -1,8 +1,17 @@
 import numpy as np
+from model.base_classifier import BaseClassifier
 
-class OneVsAllClassifier:
+class OneVsAllClassifier(BaseClassifier):
+    """
+    One Vs All classifier
+    
+    Attributes
+    ----------
+    estimator: Classifier Object
+    """
 
     def __init__(self, estimator):
+        super().__init__()
         self.estimator = estimator
         self.models = [] 
         
@@ -10,7 +19,10 @@ class OneVsAllClassifier:
         self.estimator.set_params(**parameters)
         return self
         
-    def fit(self, X, y):
+    def preprocessing(self, X):
+        return {}
+            
+    def fit(self, X, y, D=None, kwargs=None):
 
         nrow, ncol = X.shape
         
@@ -28,13 +40,14 @@ class OneVsAllClassifier:
             self.models.append(model)
             
         return self
+    
+    def decision_function(self, X):
+        score = np.array([model.decision_function(X) for model in self.models]).T
+        return score
             
     def predict(self, X):
         score = np.array([model.decision_function(X) for model in self.models]).T
         return score.argmax(axis=1)
-    
-    def score(self, X, y):
-        return np.array(self.predict(X) == y).mean()
     
     def clone(self):
         return OneVsAllClassifier(self.estimator.clone())

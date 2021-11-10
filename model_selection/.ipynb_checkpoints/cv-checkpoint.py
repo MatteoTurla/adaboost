@@ -4,7 +4,7 @@ import numpy as np
 def GridSearchCV(classifier, params, X, y, n_fold, verbose=False):
     """
     Exhaustive search over specified parameter values for a classifier. 
-    For each set of parameter in the grid, cross validation is used o estimate the performance of the classifier
+    For each set of parameter in the grid, cross validation is used to estimate the performance of the classifier
     
     Input
     -----
@@ -25,6 +25,9 @@ def GridSearchCV(classifier, params, X, y, n_fold, verbose=False):
     best_scores:
         cv scores achived by best_params
     """
+    if verbose:
+        print(f"\nGrid Search CV with {n_fold} folds")
+        print(f"Grid: {params}")
     skf = StratifiedKFold(n_splits=n_fold)
     scores = []
     for param in params:
@@ -51,5 +54,7 @@ def GridSearchCV(classifier, params, X, y, n_fold, verbose=False):
         scores.append(val_cv_score)
         
     argmax = np.array(scores).argmax()
+    if verbose:
+        print(f"Grid Search CV -> best validation score: {scores[argmax]} with parameters {params[argmax]}")
     return (params[argmax], scores[argmax])
 
