@@ -11,7 +11,9 @@ project
 │   _training_time.ypinb    compute training time of Binary AdaBoost and compare it with SKLEARN implementation
 │
 └───data     contains data used in experiments
+│
 └───figure   contains figures used in the paper
+│
 └───model
 │   │   base_classifier.py    abstract class from which all the implemented learning algorithms inherit
 │   │   adaboost.py           concreate class implementation of AdaBoost learning algorithm for binary and multiclass classification
@@ -23,8 +25,8 @@ project
 │   │   nested_cv.py          nested cv to estimate performance of any learning algorithm
 │   │
 └───old
-    │   decisionstump.py      a slow implementation of Decion Stump based on iteration
-    │   
+│   │   decisionstump.py      a slow implementation of Decion Stump based on iteration
+│   │   
 └───pdf_notebook_output    contains pdf output of all used notebooks and results of experiment_1.py
 ```
 
